@@ -20,3 +20,4 @@ void Widget::set_focus(bool f)
 {
     in_focus = f;
 }
+

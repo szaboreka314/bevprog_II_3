@@ -6,15 +6,14 @@
 
 using namespace genv;
 
-NumericUpDown::NumericUpDown(int x, int y, int w, int h, int minv, int maxv):Widget(x,y,w,h)
+NumericUpDown::NumericUpDown(int x, int y, int w, int h, int minv, int maxv, int id):Widget(x,y,w,h)
 {
-    static int ID = 0;
-    w_id = ID;
-    ++ID;
+    w_id = id;
     value = min_val = minv;
     max_val = maxv;
     updown_size = w*0.4; ///a növelõ terület mérete
     isStatic = false;
+    isWrong = false;
 }
 
 bool NumericUpDown::is_selected(int mx, int my)
@@ -40,7 +39,11 @@ void NumericUpDown::draw() const
     ss << value;
     int px =(sx-gout.twidth(ss.str()))/2;
     int py = sy-gout.cascent();
-    gout << move_to(posx+px, posy+py) << color(0,0,0) << text(ss.str());
+    if(isWrong)
+        gout << move_to(posx+px, posy+py) << color(255,0,0) << text(ss.str());
+    else
+        gout << move_to(posx+px, posy+py) << color(0,0,0) << text(ss.str());
+
 }
 
 void NumericUpDown::handle(genv::event ev)
@@ -94,3 +97,12 @@ void NumericUpDown::set_static()
     isStatic = true;
 }
 
+void NumericUpDown::set_wrong(bool w)
+{
+    isWrong = w;
+}
+
+int NumericUpDown::get_id()
+{
+    return w_id;
+}

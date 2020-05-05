@@ -17,7 +17,7 @@ GUI::GUI()
         x = 10;
         for(int j = 0; j < 9; ++j)
         {
-            NumericUpDown *nup = new NumericUpDown(x, y, 30, 30, 0, 9);
+            NumericUpDown *nup = new NumericUpDown(x, y, 30, 30, 0, 9,i*9+j);
             widgets.push_back(nup);
             x += 50;
             if(j == 2 || j == 5)
@@ -29,6 +29,10 @@ GUI::GUI()
     }
 }
 
+void GUI::setMH(MessageHandler mh)
+{
+    messageHandler = mh;
+}
 void GUI::start()
 {
     for(Widget* w:widgets)
@@ -55,6 +59,11 @@ void GUI::widget_handler()
                 else
                 {
                     w->set_focus(false);
+                    if(messageHandler.isWrong(w->get_id/9, w->get_id%9))
+                    {
+                        w->set_wrong();
+                        w->draw();
+                    }
                 }
             }
         }
@@ -96,7 +105,9 @@ void GUI::setStatic(int i, int j)
     widgets[i*9+j]->set_static();
 }
 
-bool GUI::getStatic(int i, int j)
+void GUI::reDraw(int i, int j)
 {
-    return widgets[i*9+j]->isStatic;
+    widgets[i*9+j]->draw();
+    gout << refresh;
 }
+

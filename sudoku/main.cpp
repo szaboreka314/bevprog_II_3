@@ -1,4 +1,3 @@
-#include "GUI.hpp"
 #include "GameLogic.hpp"
 
 #include <vector>
@@ -78,8 +77,7 @@ int main()
     gout << refresh;
     widget_handler(widgets);*/
 
-    GUI gui;
-    GameLogic gameLogic(gui);
-    gui.start();
+    GameLogic gameLogic;
+    gameLogic.start();
     return 0;
 }

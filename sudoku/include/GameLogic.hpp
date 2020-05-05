@@ -1,18 +1,18 @@
 #ifndef GAMELOGIC_H
 #define GAMELOGIC_H
 
-#include "GUI.hpp"
+#include "NumericUpDown.hpp"
 #include <vector>
 
 class GameLogic
 {
 protected:
-    std::vector<std::vector<int>> table;
-    GUI gui;
+    std::vector<NumericUpDown*> widgets;
 public:
-    GameLogic(GUI g);
-    virtual bool isOK(int i, int j);
-
+    GameLogic();
+    virtual void start();
+    virtual bool is_OK(int i, int j);
+    virtual void widget_handler();
 };
 
 #endif // GAMELOGIC_H

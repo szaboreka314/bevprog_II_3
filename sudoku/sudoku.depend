@@ -1,32 +1,32 @@
 # depslib dependency file v1.0
-1588693926 source:c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\main.cpp
-	"GUI.hpp"
+1588699327 source:c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\main.cpp
 	"GameLogic.hpp"
 	<vector>
 	<iostream>
 	<fstream>
 
-1588693830 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\gui.hpp
+1588697326 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\gui.hpp
+	"NumericUpDown.hpp"
+	"MessageHandler.hpp"
+	<vector>
+
+1588699551 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\numericupdown.hpp
+	"widget.hpp"
+
+1588698872 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\widget.hpp
+	"graphics.hpp"
+
+1588699283 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\gamelogic.hpp
 	"NumericUpDown.hpp"
 	<vector>
 
-1588693880 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\numericupdown.hpp
-	"widget.hpp"
-
-1588690771 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\widget.hpp
-	"graphics.hpp"
-
-1588690737 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\gamelogic.hpp
-	"GUI.hpp"
-	<vector>
-
-1588693941 source:c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\src\gamelogic.cpp
+1588699617 source:c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\src\gamelogic.cpp
 	"GameLogic.hpp"
 	<iostream>
 	<fstream>
 	<sstream>
 
-1588693867 source:c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\src\gui.cpp
+1588695575 source:c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\src\gui.cpp
 	"GUI.hpp"
 	"graphics.hpp"
 	"widget.hpp"
@@ -37,7 +37,7 @@
 1588690802 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\statictext.hpp
 	"widget.hpp"
 
-1588694011 source:c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\src\numericupdown.cpp
+1588699558 source:c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\src\numericupdown.cpp
 	"NumericUpDown.hpp"
 	"graphics.hpp"
 	<sstream>
@@ -47,7 +47,14 @@
 	"StaticText.hpp"
 	"graphics.hpp"
 
-1588690778 source:c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\src\widget.cpp
+1588698884 source:c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\src\widget.cpp
 	"widget.hpp"
 	"graphics.hpp"
+
+1588696658 source:c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\src\messagehandler.cpp
+	"MessageHandler.hpp"
+
+1588697582 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\messagehandler.hpp
+	"GUI.hpp"
+	"GameLogic.hpp"
 

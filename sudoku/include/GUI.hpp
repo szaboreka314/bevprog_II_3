@@ -2,6 +2,7 @@
 #define GUI_H
 
 #include "NumericUpDown.hpp"
+#include "MessageHandler.hpp"
 #include <vector>
 
 class GUI
@@ -15,7 +16,7 @@ public:
     virtual int getValue(int i, int j);
     virtual void setValue(int i, int j, int v);
     virtual void setStatic(int i, int j);
-    virtual bool getStatic(int i, int j);
+    virtual void reDraw(int i, int j);
 };
 
 #endif // GUI_H
