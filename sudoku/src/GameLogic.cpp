@@ -9,8 +9,14 @@ using namespace genv;
 GameLogic::GameLogic()
 {
     gout.open(800,600);
+    int num, rnd;
     std::fstream input;
     input.open("input.csv");
+    input >> num;
+    srand (time(NULL));
+    rnd = rand() % num;
+    for(int i = 0; i < rnd; ++i)
+        getline(input,line);
     std::string line, coma;
     std::stringstream ss;
     std::getline(input, line);
@@ -30,8 +36,8 @@ GameLogic::GameLogic()
             NumericUpDown *nup = new NumericUpDown(x, y, 30, 30, 0, 9, i*9+j);
             if(value != 0)
             {
-                nup->set_value(value);
                 nup->set_static();
+                nup->set_value(value);
             }
             widgets.push_back(nup);
 
@@ -69,14 +75,7 @@ void GameLogic::widget_handler()
                 if(w->is_selected(ev.pos_x, ev.pos_y))
                 {
                     w->set_focus(true);
-                    if(!is_OK(w->get_id()/9, w->get_id()%9))
-                    {
-                        w->set_wrong(true);
-                    }
-                    else
-                    {
-                        w->set_wrong(false);
-                    }
+
                 }
                 else
                 {
@@ -98,10 +97,21 @@ void GameLogic::widget_handler()
                 }
             }
         }
-        for(Widget* w:widgets)
+        for(NumericUpDown* w:widgets)
         {
             if(w->get_focus())
+            {
                 w->handle(ev);
+                if(w->get_value() != 0 && !is_OK(w->get_id()/9, w->get_id()%9))
+                    {
+                        w->set_wrong(true);
+                    }
+                    else
+                    {
+                        w->set_wrong(false);
+                    }
+            }
+
             w->draw();
         }
         gout << refresh;
@@ -111,8 +121,8 @@ void GameLogic::widget_handler()
 
 bool GameLogic::is_OK(int i, int j)
 {
-    int actValue = widgets[i*9+j]->get_value()+1;
-    std::cout << actValue << " ";
+    int actValue = widgets[i*9+j]->get_value();
+    //std::cout << actValue << " ";
     for(int k = 0; k < 9; ++k)
     {
         if(k != i && widgets[k*9+j]->get_value() == actValue) /// vele egy oszlopban lévõk
