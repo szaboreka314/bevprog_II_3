@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1588541026 source:c:\users\réka\documents\ppke itk\bevprog2\harmadik_beadando\main.cpp
+	"GUI.hpp"
+	"GameLogic.hpp"
+	<vector>
+	<iostream>
+	<fstream>
+
+1588538979 c:\users\réka\documents\ppke itk\bevprog2\harmadik_beadando\include\widget.hpp
+	"graphics.hpp"
+
+1586531755 c:\users\réka\documents\ppke itk\bevprog2\harmadik_beadando\include\statictext.hpp
+	"widget.hpp"
+
+1588539265 c:\users\réka\documents\ppke itk\bevprog2\harmadik_beadando\include\numericupdown.hpp
+	"widget.hpp"
+
+1588534202 source:c:\users\réka\documents\ppke itk\bevprog2\harmadik_beadando\src\numeric.cpp
+	"Numeric.hpp"
+
+1588534201 c:\users\réka\documents\ppke itk\bevprog2\harmadik_beadando\include\numeric.hpp
+
+1588542285 source:c:\users\réka\documents\ppke itk\bevprog2\harmadik_beadando\src\numericupdown.cpp
+	"NumericUpDown.hpp"
+	"graphics.hpp"
+	<sstream>
+
+1586532974 source:c:\users\réka\documents\ppke itk\bevprog2\harmadik_beadando\src\statictext.cpp
+	"StaticText.hpp"
+	"graphics.hpp"
+
+1586530690 source:c:\users\réka\documents\ppke itk\bevprog2\harmadik_beadando\src\widget.cpp
+	"widget.hpp"
+	"graphics.hpp"
+
+1588542285 source:c:\users\réka\documents\ppke itk\bevprog2\harmadik_beadando\src\gui.cpp
+	"GUI.hpp"
+	"graphics.hpp"
+	"widget.hpp"
+	"StaticText.hpp"
+	"NumericUpDown.hpp"
+
+1588539292 c:\users\réka\documents\ppke itk\bevprog2\harmadik_beadando\include\gui.hpp
+	"NumericUpDown.hpp"
+	<vector>
+
+1588542110 source:c:\users\réka\documents\ppke itk\bevprog2\harmadik_beadando\src\gamelogic.cpp
+	"GameLogic.hpp"
+	<iostream>
+	<fstream>
+	<sstream>
+
+1588540871 c:\users\réka\documents\ppke itk\bevprog2\harmadik_beadando\include\gamelogic.hpp
+	"GUI.hpp"
+	<vector>
+
