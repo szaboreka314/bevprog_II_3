@@ -36,14 +36,13 @@ void GUI::start()
         w->draw();
     }
     gout << refresh;
-    widget_handler();
+   widget_handler();
 }
 
 void GUI::widget_handler()
 {
     event ev;
-
-    while(gin >> ev && ev.keycode != key_escape)
+   while(gin >> ev && ev.keycode != key_escape)
     {
         if(ev.type == ev_mouse && ev.button == btn_left) ///belekattintok, kiválasztja
         {
@@ -90,4 +89,14 @@ int GUI::getValue(int i, int j)
 void GUI::setValue(int i, int j, int v)
 {
     widgets[i*9+j]->set_value(v);
+}
+
+void GUI::setStatic(int i, int j)
+{
+    widgets[i*9+j]->set_static();
+}
+
+bool GUI::getStatic(int i, int j)
+{
+    return widgets[i*9+j]->isStatic;
 }

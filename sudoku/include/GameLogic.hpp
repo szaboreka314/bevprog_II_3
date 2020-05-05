@@ -11,6 +11,7 @@ protected:
     GUI gui;
 public:
     GameLogic(GUI g);
+    virtual bool isOK(int i, int j);
 
 };
 

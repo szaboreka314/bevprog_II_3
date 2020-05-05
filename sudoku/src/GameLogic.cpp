@@ -9,30 +9,37 @@ GameLogic::GameLogic(GUI g)
     gui = g;
     std::fstream input;
     input.open("input.csv");
-    std::string line, s;
-    char l;
+    std::string line, coma;
+    std::stringstream ss;
     std::getline(input, line);
-    std::stringstream ss, ssi;
-    int d, m;
     ss << line;
     for(int i = 0; i < 9; ++i)
     {
-        std::vector<int> aux;
         for(int j = 0; j < 9; ++j)
         {
-           std::getline(ss,l, ';');
-           ssi << s;
-           ssi >> d;
-           aux.push_back(d);
-           std::cout << s << " ";
-           d = s-'0';
-           std::cout << d << " ";
-           if(m == 1)
-           {
-               gui.setValue(i,j,d);
-           }
+            getline(ss, coma, ';');
+            std::stringstream conv;
+            conv << coma;
+            int value;
+            conv>> value;
+            if(value != 0)
+            {
+                gui.setStatic(i,j);
+                gui.setValue(i,j,value);
+            }
+
         }
-        table.push_back(aux);
     }
 }
 
+bool GameLogic::isOK(int i, int j)
+{
+    int actValue = gui.getValue(i,j);
+    for(int k = 0; k < 9; ++k)
+    {
+        if(k != i && gui.getValue(k,j) == actValue) /// vele egy oszlopban lévõk
+            return false;
+        if(k != j && gui.getValue(i,k) == actValue) ///vele egy sorban lévõk
+            return false;
+    }
+}

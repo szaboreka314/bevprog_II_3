@@ -16,6 +16,8 @@ public:
     virtual bool is_selected(int mx, int my) override;
     virtual int get_value();
     virtual void set_value(int v);
+    virtual void set_static();
+    bool isStatic;
 };
 
 #endif // NUMERICUPDOWN_H

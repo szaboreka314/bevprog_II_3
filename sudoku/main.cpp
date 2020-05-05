@@ -79,7 +79,7 @@ int main()
     widget_handler(widgets);*/
 
     GUI gui;
-    gui.start();
     GameLogic gameLogic(gui);
+    gui.start();
     return 0;
 }
