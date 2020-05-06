@@ -3,6 +3,8 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace genv;
 
@@ -10,17 +12,20 @@ GameLogic::GameLogic()
 {
     gout.open(800,600);
     int num, rnd;
+    std::string line, coma;
+    std::stringstream ss;
     std::fstream input;
     input.open("input.csv");
-    input >> num;
+    std::getline(input, line);
+    ss << line;
+    ss >> num;
     srand (time(NULL));
     rnd = rand() % num;
     for(int i = 0; i < rnd; ++i)
-        getline(input,line);
-    std::string line, coma;
-    std::stringstream ss;
+        std::getline(input,line);
     std::getline(input, line);
-    ss << line;
+    std::stringstream ss2;
+    ss2 << line;
     int x = 10;
     int y = 10;
     for(int i = 0; i < 9; ++i)
@@ -28,7 +33,7 @@ GameLogic::GameLogic()
         x = 10;
         for(int j = 0; j < 9; ++j)
         {
-            getline(ss, coma, ';');
+            getline(ss2, coma, ';');
             std::stringstream conv;
             conv << coma;
             int value;
@@ -50,6 +55,11 @@ GameLogic::GameLogic()
             y += 10;
         y += 50;
     }
+    StaticText *st = new StaticText(600,50,0,0,"Sudoku");
+    StaticText *st2 = new StaticText(480, 100, 0, 0, "The objective is to fill the 9x9 grid");
+    StaticText *st3 = new StaticText(480, 130, 0,0,"with digits so that each column, each ");
+    StaticText *st4 = new StaticText(480, 160, 0,0,"row and each of the nine 3x3 grid");
+    StaticText *st5 = new StaticText(480, 190, 0,0,"contain all of the digits from 1 to 9.");
     widget_handler();
 }
 
@@ -111,11 +121,16 @@ void GameLogic::widget_handler()
                         w->set_wrong(false);
                     }
             }
-
             w->draw();
+            if(w->get_value() != 0 && w->get_wrong() == true)
+                done = false;
+
         }
         gout << refresh;
+        /*if(done)
+        StaticText *st = new StaticText(350,500,0,0,"Congratulations!");*/
     }
+
 }
 
 

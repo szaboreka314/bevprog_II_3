@@ -2,6 +2,7 @@
 #define GAMELOGIC_H
 
 #include "NumericUpDown.hpp"
+#include "StaticText.hpp"
 #include <vector>
 
 class GameLogic

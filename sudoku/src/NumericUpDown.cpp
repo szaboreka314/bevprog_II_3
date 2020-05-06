@@ -106,3 +106,8 @@ int NumericUpDown::get_id()
 {
     return w_id;
 }
+
+bool NumericUpDown::get_wrong()
+{
+    return isWrong;
+}
