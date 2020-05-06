@@ -10,18 +10,18 @@
 	"MessageHandler.hpp"
 	<vector>
 
-1588702560 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\numericupdown.hpp
+1588756276 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\numericupdown.hpp
 	"widget.hpp"
 
 1588698872 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\widget.hpp
 	"graphics.hpp"
 
-1588703403 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\gamelogic.hpp
+1588755258 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\gamelogic.hpp
 	"NumericUpDown.hpp"
 	"StaticText.hpp"
 	<vector>
 
-1588702397 source:c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\src\gamelogic.cpp
+1588756301 source:c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\src\gamelogic.cpp
 	"GameLogic.hpp"
 	<iostream>
 	<fstream>
@@ -40,7 +40,7 @@
 1588690802 c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\include\statictext.hpp
 	"widget.hpp"
 
-1588702576 source:c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\src\numericupdown.cpp
+1588756291 source:c:\users\réka\documents\ppke itk\bevprog2\bevprog_ii_3\sudoku\src\numericupdown.cpp
 	"NumericUpDown.hpp"
 	"graphics.hpp"
 	<sstream>

@@ -97,6 +97,11 @@ void NumericUpDown::set_static()
     isStatic = true;
 }
 
+bool NumericUpDown::get_static()
+{
+    return isStatic;
+}
+
 void NumericUpDown::set_wrong(bool w)
 {
     isWrong = w;

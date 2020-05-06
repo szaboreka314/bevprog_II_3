@@ -17,6 +17,7 @@ public:
     virtual int get_value();
     virtual void set_value(int v);
     virtual void set_static();
+    virtual bool get_static();
     virtual void set_wrong(bool w);
     virtual bool get_wrong();
     virtual int get_id();

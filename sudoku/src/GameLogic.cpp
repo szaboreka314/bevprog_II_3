@@ -10,6 +10,7 @@ using namespace genv;
 
 GameLogic::GameLogic()
 {
+    OK = 0;
     gout.open(800,600);
     int num, rnd;
     std::string line, coma;
@@ -43,6 +44,7 @@ GameLogic::GameLogic()
             {
                 nup->set_static();
                 nup->set_value(value);
+                ++OK;
             }
             widgets.push_back(nup);
 
@@ -60,6 +62,7 @@ GameLogic::GameLogic()
     StaticText *st3 = new StaticText(480, 130, 0,0,"with digits so that each column, each ");
     StaticText *st4 = new StaticText(480, 160, 0,0,"row and each of the nine 3x3 grid");
     StaticText *st5 = new StaticText(480, 190, 0,0,"contain all of the digits from 1 to 9.");
+    StaticText *st6 = new StaticText(480, 220, 0,0,"You did well, if there's no red digit!");
     widget_handler();
 }
 
@@ -112,23 +115,22 @@ void GameLogic::widget_handler()
             if(w->get_focus())
             {
                 w->handle(ev);
+
                 if(w->get_value() != 0 && !is_OK(w->get_id()/9, w->get_id()%9))
                     {
                         w->set_wrong(true);
+                        w->set_focus(false);
                     }
                     else
                     {
                         w->set_wrong(false);
+                        w->set_focus(false);
                     }
+
             }
             w->draw();
-            if(w->get_value() != 0 && w->get_wrong() == true)
-                done = false;
-
         }
         gout << refresh;
-        /*if(done)
-        StaticText *st = new StaticText(350,500,0,0,"Congratulations!");*/
     }
 
 }

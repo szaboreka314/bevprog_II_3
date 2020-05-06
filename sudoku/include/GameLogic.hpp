@@ -9,6 +9,7 @@ class GameLogic
 {
 protected:
     std::vector<NumericUpDown*> widgets;
+    int OK;
 public:
     GameLogic();
     virtual void start();
